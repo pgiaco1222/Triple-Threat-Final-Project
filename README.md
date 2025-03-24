@@ -1,5 +1,7 @@
 # Triple-Threat-Final-Project
-SCO file for the "Triple Threat" final project.
+# SCO file for the "Triple Threat" final project.
+# This solo project will plan on creating a 3 minute song using RTCMix coding, hardware synthesis, and VST Instruments. 
+
 
 amp = 8000
 env = maketable("line", 1000, 0,0, 0.5,1, 1,0.8, 9,0.7, 10,0)
