@@ -1,0 +1,45 @@
+# Proposal
+
+## What will (likely) be the title of your project?
+
+Triple Threat (WIP Title)
+
+
+## In just a sentence or two, summarize your project. (E.g., "A website that lets you buy and sell stocks.")
+
+A 3-minute song consisting of RTCMix coded instruments, hardware synths, and VST instruments. 
+
+
+## In a paragraph or more, detail your project. What will your software do? What features will it have? How will it be executed?
+
+The code will include some element of the song, likely arpeggiated chords, played via either FM, Wavetable, or Granular synthesis. That instrument will then be run through a filter of some kind. White or pink noise may also be used for percussion. 
+
+
+## If planning to combine 1051's final project with another course's final project, with which other course? And which aspect(s) of your proposed project would relate to 1051, and which aspect(s) would relate to the other course?
+
+MUST 3763 - Piece will include a Moog Superphat synth as a bass line or as some other element of the piece. Piece will also have some visual element and, depending on its relevance, it may or may not also be included with the 1051 submission. 
+
+MUST 4712 - Piece will include computer synthesis using RTCMix as an arpeggiation or as some other element of the piece. 
+
+
+## In the world of software, most everything takes longer to implement than you expect. And so it's not uncommon to accomplish less in a fixed amount of time than you hope.
+
+### In a sentence (or list of features), define a GOOD outcome for your final project. I.e., what WILL you accomplish no matter what?
+
+Piece includes both RTCMix elements and hardware synth elements. Piece has a basic structure and isn't horrible to listen to. 
+
+
+### In a sentence (or list of features), define a BETTER outcome for your final project. I.e., what do you THINK you can accomplish before the final project's deadline?
+
+Piece includes both RTCMix elements and hardware synth elements. Piece may also include certain VST effects, like filters. Piece displays some level of compositional intrigue, and the different elements of the piece mesh together somewhat coherently. 
+
+
+### In a sentence (or list of features), define a BEST outcome for your final project. I.e., what do you HOPE to accomplish before the final project's deadline?
+
+Piece includes RTCMix elements, hardware synth elements, and vocal performance. Piece also includes certain VST effects, like filters. Piece displays a competent level of compositional intrigue, and the different elements of the piece mesh together very well. Piece is of a quality that I would feel comfortable publishing on Spotify.  
+
+
+## In a paragraph or more, outline your next steps. What new skills will you need to acquire? What topics will you need to research? 
+
+The only thing I still struggle with is composing a coherent piece in its totality. I just need to brush up on my composition skills and some details about how certain VST effects work and their best use cases. Lastly, studying how the synth in question I am using could help a lot as well. 
+
