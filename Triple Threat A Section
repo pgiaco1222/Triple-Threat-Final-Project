@@ -1,0 +1,201 @@
+// standard bus config
+bus_config("WAVETABLE", "aux 2-3 out")
+bus_config("EQ", "aux 2-3 in", "out 0-1")
+
+bus_config("NOISE", "aux 0-1 out")
+bus_config("FILTSWEEP", "aux 0-1 in", "out 0-1")
+
+
+//declaration of starting variables
+st = 0
+dur = 0.15
+amp = 10000
+
+//envelope and waveform generation
+env = maketable("line", 1000, 0,0, 0.1,1, 1,0.8, 10,0)
+waveform = maketable("wave", 2000, "buzz14")
+
+
+//lists
+notes = {pchlet("Db3"), pchlet("Eb3"), pchlet("F3"), pchlet("Ab3"), pchlet("Db3"), pchlet("C4")}
+pitch = len(notes)
+
+duration = {4, 8, 2, 6, 8, 2}
+mult = len(duration)
+
+//filt variables and misc.
+pan = makeLFO("sine", 0.01, 0.35, 0.65)
+amp2 = 0.8
+amp3 = 10
+FiltType = 0  //0: lowpass, 1: highpass, 2: lowshelf, 3: highshelf, 4: peaknotch
+Input = 1
+Bypass = 0 //0: bypass off, 1: bypass on
+cutoff = 12000
+CutEnv = maketable("line", 1000, 0,0, 10, 1)
+resonance = 5.0
+
+
+RingDown = 1
+Steep = 1.9
+Balance = 1
+Input = 0
+Bypass = 0 
+CentFreq = makeLFO ("sine", 0.5, 1000, 8000)
+CentEnv = maketable("line", 2000, 0,0, 0.1,1, 1,0.8, 10,0)
+BWidth = -0.25
+Deltime = 1
+Delfeed = 1
+
+
+//main loop (noise is either commented out or not depending on which section I'm recording)
+for (i = 0; i < 24; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
+
+//changing notes
+notes[4] = pchlet("Eb4")
+
+for (i = 0; i < 24; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
+
+//changing notes
+notes[3] = pchlet("Bb3")
+notes[4] = pchlet("F4")
+notes[5] = pchlet("Dd4")
+
+for (i = 0; i < 24; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
+
+notes[4] = pchlet("Gb4")
+
+for (i = 0; i < 6; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
+
+notes[4] = pchlet("F4")
+
+for (i = 0; i < 6; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
+
+notes[4] = pchlet("Eb4")
+notes[5] = pchlet("C4")
+
+for (i = 0; i < 6; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
+
+notes[4] = pchlet("Db4")
+notes[3] = pchlet("Ab3")
+
+for (i = 0; i < 6; i = i + 1)
+{
+
+index = i % (pitch)
+freq = notes[index]
+
+index2 = i % (mult)
+durMult = duration[index2]
+
+
+WAVETABLE(st, dur*durMult, amp*env, freq, pan, waveform)
+EQ(st, 0, dur, amp2, FiltType, Input, pan, Bypass, cutoff*CutEnv, resonance) 
+
+NOISE(st, dur, amp*env, pan)
+FILTSWEEP(st, 0, dur, 1, RingDown, Steep, Balance, Input, pan, Bypass, CentFreq*CentEnv, BWidth)
+
+st = st + dur
+}
